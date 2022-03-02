@@ -200,7 +200,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/order/getByStoreAndDate",
+							"raw": "http://localhost:8080/order/getByStoreAndProduct",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -208,7 +208,7 @@
 							"port": "8080",
 							"path": [
 								"order",
-								"getByStoreAndDate"
+								"getByStoreAndProduct"
 							]
 						}
 					},
@@ -221,7 +221,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"Rick\",\r\n  \"identification\": \"123\"\r\n}",
+							"raw": "{\r\n  \"clientId\": 1,\r\n  \"orders\": [\r\n    {\r\n      \"storeId\": 1,\r\n      \"products\": [\r\n        {\r\n          \"id\": 1,\r\n          \"amount\": 2\r\n        },\r\n        {\r\n          \"id\": 2,\r\n          \"amount\": 7\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"storeId\": 3,\r\n      \"products\": [\r\n        {\r\n          \"id\": 6,\r\n          \"amount\": 1\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"storeId\": 5,\r\n      \"products\": [\r\n        {\r\n          \"id\": 1,\r\n          \"amount\": 2\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -229,14 +229,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/client/create",
+							"raw": "http://localhost:8080/order/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"client",
+								"order",
 								"create"
 							]
 						}
